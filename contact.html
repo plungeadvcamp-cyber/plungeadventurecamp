@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<title>contacts</title>
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+h1,
+h2,
+h3{
+    font-family: 'Fredericka the Great', cursive;
+}
+
+
+        *{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+:root{
+--bg:#f8f5ed;
+--yellow:#f5c400;
+--dark:#111111;
+--text:#555555;
+--white:#ffffff;
+}
+
+body{
+background:var(--bg);
+color:var(--dark);
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+}
+
+ul{
+list-style:none;
+}
+
+
+/* NAVBAR */
+
+header{
+backdrop-filter:blur(12px);
+background:rgba(248,245,237,.9);
+}  
+
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:var(--bg);
+border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.navbar{
+max-width:1400px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 40px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo img{
+width: 200px;
+height: auto;
+}
+
+.logo h2{
+font-size:1.8rem;
+font-weight:700;
+}
+
+.logo img{
+transition:.4s;
+}
+
+.logo img:hover{
+transform:rotate(-5deg) scale(1.08);
+}
+.nav-links{
+display:flex;
+gap:35px;
+}
+
+.nav-links a{
+color:#555;
+font-weight:500;
+transition:.3s;
+}
+
+
+
+.nav-links a{
+position:relative;
+}
+
+.nav-links a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-8px;
+width:0;
+height:3px;
+background:#f5c400;
+transition:.4s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+.register-btn{
+background:var(--yellow);
+color:black;
+padding:15px 30px;
+border-radius:12px;
+font-weight:700;
+transition:.3s;
+box-shadow:0 10px 20px rgba(245,196,0,.2);
+}
+
+.register-btn:hover{
+transform:translateY(-3px);
+}
+
+.menu-toggle{
+    display:none;
+    font-size:2rem;
+    cursor:pointer;
+}
+/* ================= FOOTER ================= */
+
+footer{
+background:#ece7dd;
+padding:80px 60px 30px;
+margin-top:100px;
+}
+
+.footer-content{
+max-width:1400px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+gap:60px;
+}
+
+.footer-column{
+flex:1;
+}
+
+.footer-logo{
+width:120px;
+margin-bottom:20px;
+}
+
+.footer-column h3{
+font-size:28px;
+margin-bottom:25px;
+color:#111;
+}
+
+.footer-column p{
+font-size:18px;
+line-height:1.8;
+color:#666;
+margin-bottom:12px;
+}
+
+.footer-column a{
+display:block;
+font-size:18px;
+margin-bottom:15px;
+color:#666;
+text-decoration:none;
+transition:.3s;
+}
+
+.footer-column a:hover{
+color:#f5c400;
+padding-left:8px;
+}
+
+.copyright{
+text-align:center;
+margin-top:50px;
+padding-top:25px;
+border-top:1px solid rgba(0,0,0,.1);
+color:#777;
+}
+
+
+.contact-btn:hover{
+transform:translateY(-5px) scale(1.03);
+box-shadow:
+0 20px 40px rgba(245,196,0,.35),
+0 0 30px rgba(245,196,0,.45);
+}
+
+
+
+.contact-container{
+max-width:1400px;
+margin:80px auto;
+padding:0 40px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.left-side{
+display:flex;
+flex-direction:column;
+gap:30px;
+}
+
+.info-card,
+.hours-card,
+.join-box{
+background:white;
+padding:40px;
+border-radius:30px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.info-card h2,
+.hours-card h2,
+.join-box h2{
+font-size:2rem;
+margin-bottom:25px;
+}
+
+.info-card p,
+.hours-card p,
+.join-box p{
+font-size:1.1rem;
+line-height:1.8;
+color:#666;
+margin-bottom:15px;
+}
+
+.join-box{
+text-align:center;
+}
+
+.contact-btn{
+display:block;
+margin-top:25px;
+background:#f5c400;
+color:black;
+padding:18px;
+border-radius:14px;
+font-weight:700;
+text-align:center;
+}
+
+
+.right-side{
+display:flex;
+}
+
+.message-box{
+width:100%;
+background:white;
+padding:40px;
+border-radius:30px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.message-box h2{
+font-size:2rem;
+margin-bottom:25px;
+}
+
+.message-box form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.message-box input{
+width:100%;
+padding:22px;
+border:1px solid #ddd;
+border-radius:16px;
+font-size:1.1rem;
+}
+
+.message-box textarea{
+width:100%;
+height:400px;
+padding:22px;
+border:1px solid #ddd;
+border-radius:16px;
+font-size:1.1rem;
+resize:none;
+}
+
+.contact-btn{
+width:100%;
+padding:22px;
+font-size:1.2rem;
+background:#f5c400;
+border:none;
+border-radius:16px;
+font-weight:700;
+margin-top:10px;
+cursor:pointer;
+}
+
+@media(max-width:900px){
+
+.footer-content{
+flex-direction:column;
+text-align:center;
+}
+
+
+.menu-toggle{
+display:none;
+font-size:2rem;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.navbar{
+flex-direction:row;
+justify-content:space-between;
+padding:15px 20px;
+}
+
+.logo h2{
+font-size:1.4rem;
+}
+
+.logo img{
+width: 150px;
+height: auto;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+width:100%;
+background:#f8f5ed;
+flex-direction:column;
+text-align:center;
+padding:20px 0;
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+.nav-links.show{
+display:flex;
+}
+
+.register-btn{
+display:none;
+}
+}
+
+
+
+
+
+@media (max-width:768px){
+
+.contact-container{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:20px;
+}
+
+.left-side,
+.right-side{
+    width:100% !important;
+}
+
+.info-card,
+.hours-card,
+.join-box,
+.message-box{
+    width:100% !important;
+}
+
+}
+
+}
+
+.nav-links a{
+    color:#555;
+    font-weight:500;
+    text-decoration:none;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:3px;
+    background:#f5c400;
+    transition:.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
+}
+
+</style>
+
+</head>
+<body>
+
+      <!-- NAVBAR -->
+
+<!-- NAVBAR -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="logo.png.png" alt="logo">
+</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
+</div>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="activities.html">Activities</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="testimonials.html">Testimonials</a></li>
+<li><a href="contact.html" class="active">Contact</a></li>
+
+<li>
+<a href="https://forms.gle/DrwZxWbhLuFZMXtP8"
+target="_blank"
+class="register-btn">
+Register Now
+</a>
+</li>
+
+</ul>
+
+</nav>
+</header>
+
+
+
+<section class="contact-container">
+
+<div class="left-side">
+
+<div class="info-card">
+
+<h2>Contact Information</h2>
+
+<p>
+<i class="fa-solid fa-location-dot"></i>
+Plunge Adventure Camp, Ooty, Tamil Nadu 643001
+</p>
+
+<p>✆  +91 98436 22122</p>
+
+<p>✉︎ plungeadvcamp@gmail.com</p>
+
+</div>
+
+<div class="hours-card">
+
+<h2>Office Hours</h2>
+
+<p>Monday – Friday: 9:30 AM – 6:30 PM</p>
+
+<p>Saturday And Sunday: Closed</p>
+
+
+</div>
+
+<div class="join-box">
+
+<h2>Ready to Join?</h2>
+
+<p>Skip the message and secure your spot today!</p>
+
+<a href="https://forms.gle/DrwZxWbhLuFZMXtP8"
+target="_blank"
+class="contact-btn">
+Register Now →
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="right-side">
+
+<div class="message-box">
+
+<h2>Send us a message</h2>
+
+<form action="mailto:plungeadvcamp@gmail.com" method="post" enctype="text/plain">
+
+<input type="text" placeholder="Your name" name="Name" required>
+
+<input type="email" placeholder="your.email@example.com" name="Email" required>
+
+<textarea placeholder="Tell us how we can help..." name="Message" required></textarea>
+
+<button type="submit" class="contact-btn">
+Send Message ✈
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+</section>
+
+<footer>
+
+<div class="footer-content">
+
+<div class="footer-column">
+
+<img src="logo.png.png" class="footer-logo">
+
+<p>
+Rewired for Purpose.
+Experience transformative adventures that challenge,
+inspire and renew.
+</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Quick Links</h3>
+
+<a href="index.html">Home</a>
+<a href="activities.html">Activities</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div class="footer-column">
+
+<div class="footer-column">
+
+<h3>Contact Us</h3>
+
+<p>
+<i class="fa-solid fa-location-dot"></i>
+Plunge Adventure Camp, Ooty, Tamil Nadu 643001
+</p>
+
+<a href="https://wa.me/9843622122?text=Hi%20Plunge%20Adventure%20Camp,%20I%20would%20like%20to%20know%20more." target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+Chat on WhatsApp
+</a>
+
+<a href="mailto:plungeadvcamp@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+plungeadvcamp@gmail.com
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Plunge Adventure Camp. All Rights Reserved.
+</div>
+
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+
+
+

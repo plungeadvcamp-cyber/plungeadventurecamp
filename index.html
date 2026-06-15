@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>Plunge Adventure Camp</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+h1,
+h2,
+h3{
+    font-family: 'Fredericka the Great', cursive;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+:root{
+--bg:#f8f5ed;
+--yellow:#f5c400;
+--dark:#111111;
+--text:#555555;
+--white:#ffffff;
+}
+
+body{
+background:var(--bg);
+color:var(--dark);
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+}
+
+ul{
+list-style:none;
+}
+
+
+/* NAVBAR */
+header{
+backdrop-filter:blur(12px);
+background:rgba(248,245,237,.9);
+}  
+
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:var(--bg);
+border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.navbar{
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;   /* Reduced */
+}
+
+.logo img{
+    width: 200px;         /* Adjust between 70px-90px */
+    height: auto;
+}
+
+
+.logo h2{
+font-size:1.8rem;
+font-weight:700;
+}
+
+.logo img{
+transition:.4s;
+}
+
+.nav-links{
+display:flex;
+gap:35px;
+}
+
+.nav-links a{
+color:#555;
+font-weight:500;
+transition:.3s;
+}
+
+
+
+.nav-links a{
+position:relative;
+}
+
+.nav-links a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-8px;
+width:0;
+height:3px;
+background:#f5c400;
+transition:.4s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+.register-btn{
+background:var(--yellow);
+color:black;
+padding:15px 30px;
+border-radius:12px;
+font-weight:700;
+transition:.3s;
+box-shadow:0 10px 20px rgba(245,196,0,.2);
+}
+
+.register-btn:hover{
+transform:translateY(-3px);
+}
+
+/* HERO */
+/* HERO */
+
+.hero{
+position:relative;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.bg-video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:1;
+}
+
+.hero-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+z-index:2;
+}
+
+.hero-content{
+position:relative;
+z-index:3;
+color:white;
+max-width:800px;
+}
+
+.hero-content h1{
+font-size:6rem;
+font-weight:800;
+}
+
+.hero-content span{
+color:#f5c400;
+}
+
+.hero-content h1{
+animation:fadeUp 1s ease;
+}
+
+.hero-content h2{
+animation:fadeUp 1.3s ease;
+}
+
+.hero-content p{
+animation:fadeUp 1.6s ease;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* SECTION */
+.primary-btn{
+background:var(--yellow);
+color:black;
+padding:16px 30px;
+border-radius:12px;
+font-weight:700;
+display:inline-block;
+transition:.3s;
+}
+
+.register-btn:hover,
+.primary-btn:hover{
+transform:translateY(-6px) scale(1.05);
+
+box-shadow:
+0 20px 40px rgba(245,196,0,.4),
+0 0 30px rgba(245,196,0,.4);
+}
+
+.primary-btn:hover{
+transform:translateY(-4px);
+}
+
+.secondary-btn{
+border:2px solid var(--yellow);
+padding:16px 30px;
+border-radius:12px;
+color:black;
+font-weight:600;
+}
+
+.hero-right video{
+width:100%;
+height:600px;
+object-fit:cover;
+border-radius:25px;
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+
+
+.hero-content p{
+    margin-bottom:40px;
+}
+
+
+
+
+/* SECTION */
+
+.section-title{
+text-align:center;
+font-size:4rem;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.section-subtitle{
+max-width:900px;
+margin:auto;
+text-align:center;
+color:var(--text);
+font-size:1.2rem;
+line-height:1.8;
+margin-bottom:70px;
+}
+
+/* EVENT */
+
+.event-section{
+padding:60px 40px;
+max-width:1400px;
+margin:auto;
+}
+
+.event-card{
+background:white;
+border-radius:30px;
+overflow:hidden;
+display:grid;
+grid-template-columns:2fr 1fr;
+box-shadow:0 15px 40px rgba(0,0,0,.05);
+}
+
+.event-left{
+padding:60px;
+}
+
+.event-card,
+.different-card{
+transition:.4s;
+}
+
+.event-card:hover,
+.different-card:hover{
+transform:translateY(-10px);
+box-shadow:
+0 20px 50px rgba(0,0,0,.12),
+0 0 25px rgba(245,196,0,.15);
+} 
+
+.badge{
+display:inline-block;
+background:#fff6d8;
+padding:10px 18px;
+border-radius:30px;
+color:#c49a00;
+font-weight:600;
+margin-bottom:30px;
+}
+
+.event-left h2{
+font-size:3rem;
+margin-bottom:25px;
+}
+
+.event-left p{
+font-size:1.2rem;
+line-height:1.8;
+color:var(--text);
+}
+
+.event-left h3{
+margin-top:40px;
+margin-bottom:25px;
+}
+
+.includes{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.include-item{
+background:#fafafa;
+padding:20px;
+border-radius:15px;
+font-weight:500;
+}
+
+.event-right{
+padding:60px;
+background:#fcfcfc;
+}
+
+.fee-title{
+letter-spacing:2px;
+color:#666;
+}
+
+.price{
+font-size:5rem;
+font-weight:800;
+color:var(--yellow);
+margin:15px 0;
+}
+
+.fee-text{
+color:#777;
+margin-bottom:30px;
+}
+
+.event-date{
+font-size:1.3rem;
+font-weight:600;
+margin:35px 0;
+}
+
+.full-btn{
+width:100%;
+text-align:center;
+}
+
+
+
+
+/* DIFFERENT */
+
+.different{
+padding:50px 40px;
+text-align:center;
+}
+
+.different h2{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.different p{
+color:var(--text);
+font-size:1.2rem;
+}
+
+.different-grid{
+max-width:1400px;
+margin:80px auto 0;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+}
+
+.different-card{
+padding:30px;
+}
+
+.icon-box{
+width:90px;
+height:90px;
+margin:auto;
+border-radius:25px;
+background:#fff6d8;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:2rem;
+margin-bottom:25px;
+}
+
+.different-card h3{
+font-size:2rem;
+margin-bottom:15px;
+}
+
+.different-card p{
+line-height:1.8;
+}
+
+/* RESET */
+
+.reset-section{
+max-width:1400px;
+margin:auto;
+padding: 30px 40px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.reset-image img{
+width:100%;
+border-radius:25px;
+background:white;
+padding:20px;
+box-shadow:0 15px 40px rgba(0,0,0,.06);
+}
+
+.reset-content h2{
+font-size:2.7rem;
+margin-bottom:25px;
+}
+
+@media(max-width:768px){
+
+.reset-content h2{
+font-size:2.2rem;
+line-height:1.2;
+}
+
+.reset-content p{
+font-size:1rem;
+line-height:1.8;
+}
+
+}
+.reset-content p{
+font-size:1.15rem;
+line-height:2;
+margin-bottom:25px;
+color:var(--text);
+}
+
+.reset-image{
+overflow:hidden;
+border-radius:25px;
+}
+
+.reset-image img{
+transition:.6s;
+}
+
+.reset-image:hover img{
+transform:scale(1.08);
+}
+
+
+.gallery-section{
+    padding: 50px 40px;
+    text-align:center;
+}
+
+.gallery-section h2{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.gallery-section p{
+    max-width:800px;
+    margin:auto;
+    color:#666;
+    font-size:1.1rem;
+    line-height:1.8;
+    margin-bottom:70px;
+}
+
+.gallery-grid{
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.gallery-item{
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.08),
+        0 0 20px rgba(245,196,0,.2);
+    transition:.4s;
+    cursor:pointer;
+}
+
+.gallery-item img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
+}
+
+.gallery-item:hover{
+    transform:translateY(-10px);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.15),
+        0 0 35px rgba(245,196,0,.5);
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#ece7dd;
+padding:80px 60px 30px;
+margin-top:100px;
+}
+
+.footer-content{
+max-width:1400px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+gap:60px;
+}
+
+.footer-column{
+flex:1;
+}
+
+.footer-logo{
+width:120px;
+margin-bottom:20px;
+}
+
+.footer-column h3{
+font-size:28px;
+margin-bottom:25px;
+color:#111;
+}
+
+.footer-column p{
+font-size:18px;
+line-height:1.8;
+color:#666;
+margin-bottom:12px;
+}
+
+.footer-column a{
+display:block;
+font-size:18px;
+margin-bottom:15px;
+color:#666;
+text-decoration:none;
+transition:.3s;
+}
+
+.footer-column a:hover{
+color:#f5c400;
+padding-left:8px;
+}
+
+.copyright{
+text-align:center;
+margin-top:50px;
+padding-top:25px;
+border-top:1px solid rgba(0,0,0,.1);
+color:#777;
+}
+
+
+
+
+
+@media(max-width:700px){
+
+.footer-content{
+display:flex;
+flex-direction:column;
+text-align:center;
+gap:40px;
+}
+
+.footer-column{
+width:100%;
+}
+
+.footer-logo{
+margin:auto;
+display:block;
+}
+
+}
+
+
+
+/* MOBILE */
+.menu-toggle{
+display:none;
+font-size:2rem;
+cursor:pointer;
+}
+
+@media(max-width:700px){
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+display:none;
+position:absolute;
+top:90px;
+left:0;
+width:100%;
+background:#f8f5ed;
+flex-direction:column;
+text-align:center;
+padding:30px 0;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+z-index:999;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.nav-links li{
+margin:15px 0;
+}
+
+.logo h2{
+font-size:1.2rem;
+}
+
+.logo img{
+  width: 130px;
+    height: auto;
+}
+
+.different-grid{
+grid-template-columns:1fr;
+}
+
+.includes{
+grid-template-columns:1fr;
+}
+
+}
+
+.copyright{
+text-align:center;
+margin-top:50px;
+padding-top:25px;
+border-top:1px solid rgba(0,0,0,.1);
+color:#777;
+}
+
+.hero{
+position:relative;
+height:700px;
+border:none;
+}
+
+
+.bg-video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:1;
+}
+
+.hero-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+z-index:2;
+}
+
+.hero-content{
+position:relative;
+z-index:3;
+color:white;
+max-width:800px;
+}
+
+.hero-content h1{
+font-size:6rem;
+font-weight:800;
+}
+
+.hero-content span{
+color:#f5c400;
+}
+.copyright{
+text-align:center;
+margin-top:50px;
+padding-top:25px;
+border-top:1px solid rgba(0,0,0,.1);
+color:#777;
+}
+
+
+@media(max-width:768px){
+
+.reset-section{
+display:flex;
+flex-direction:column;
+padding:60px 20px;
+}
+
+.reset-image{
+order:1;
+}
+
+.reset-content{
+order:2;
+}
+
+}
+
+@media (max-width:768px){
+
+.hero-container{
+    flex-direction:column;
+}
+
+.hero-left,
+.hero-right{
+    width:100%;
+}
+@media(max-width:768px){
+
+.event-card{
+    display:flex;
+    flex-direction:column;
+}
+
+.event-left,
+.event-right{
+    width:100%;
+}
+
+.event-right{
+    padding:30px;
+}
+
+}
+}
+
+.full-btn{
+    margin-top:80px;
+    display:inline-block;
+}
+
+.icon-box{
+width:90px;
+height:90px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:25px;
+}
+
+.icon-box img{
+width:60px;
+height:60px;
+object-fit:contain;
+filter: grayscale(100%);
+}
+
+
+@media(max-width:768px){
+
+    .gallery-section{
+        padding:80px 20px;
+    }
+
+    .gallery-section h2{
+        font-size:2.5rem;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .gallery-item img{
+        height:250px;
+    }
+}
+
+
+.nav-links a{
+    color:#555;
+    font-weight:500;
+    text-decoration:none;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:3px;
+    background:#f5c400;
+    transition:.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="logo.png.png" alt="logo">
+</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
+</div>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="index.html" class="active">Home</a></li>
+<li><a href="activities.html">Activities</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="testimonials.html">Testimonials</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+<li>
+<a href="https://forms.gle/DrwZxWbhLuFZMXtP8"
+target="_blank"
+class="register-btn">
+Register Now
+</a>
+</li>
+
+</ul>
+
+</nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+<video class="bg-video" autoplay loop playsinline controls>
+<source src="hero.mp4.mp4" type="video/mp4">
+</video>
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+
+
+
+
+</div>
+
+</section>
+
+<!-- FEATURED EVENT -->
+
+<section class="event-section">
+
+<h2 class="section-title">
+Featured Camp Event
+</h2>
+
+<p class="section-subtitle">
+
+Join us for an exciting adventure at Plunge Camp.
+Experience three days of growth,
+thrilling adventure and lifelong memories.
+
+</p>
+
+<div class="event-card">
+
+<div class="event-left">
+
+<div class="badge">
+Registration Open
+</div>
+
+<h2>
+Plunge Adventure Camp 2026
+</h2>
+
+<p>
+
+A transformative 3-day adventure camp experience
+designed to rewire your purpose and build
+unbreakable team bonds through challenging outdoor activities.
+
+</p>
+
+<h3>What's Included</h3>
+
+<div class="includes">
+
+<div class="include-item">
+All Adventure Activities
+</div>
+
+<div class="include-item">
+Expriential Learning 
+</div>
+
+<div class="include-item">
+Inspirational Talks
+</div>
+
+<div class="include-item">
+Food and Accommodation
+</div>
+
+</div>
+
+</div>
+
+<div class="event-right">
+
+<p class="fee-title">
+REGISTRATION FEE
+</p>
+
+<h1 class="price">
+₹3800
+</h1>
+
+<p class="fee-text">
+All-inclusive per camper
+</p>
+
+<hr>
+
+<div class="event-date">
+
+October 23–25, 2026
+
+</div>
+
+<a href="https://forms.gle/DrwZxWbhLuFZMXtP8"
+target="_blank"
+class="primary-btn full-btn">
+
+Register Now
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WHAT MAKES US DIFFERENT -->
+
+<section class="different">
+
+<h2>What makes us different</h2>
+
+<p>
+More than just adventure —
+a journey of transformation and purpose
+</p>
+
+<div class="different-grid">
+
+<div class="different-card">
+
+<div class="icon-box">
+<img src="adventure.png.png" alt="Adventure">
+</div>
+
+<h3>Adventures</h3>
+
+<p>
+Challenge yourself through
+rafting, climbing and wilderness exploration.
+</p>
+
+</div>
+
+<div class="different-card">
+
+<div class="icon-box">
+<img src="community.png.png" alt="Community">
+</div>
+
+<h3>Community</h3>
+
+<p>
+Build lasting friendships
+and grow together in a supportive environment.
+</p>
+
+</div>
+
+<div class="different-card">
+
+<div class="icon-box">
+<img src="growth.png.png" alt="Growth">
+</div>
+
+<h3>Growth</h3>
+
+<p>
+Discover purpose and renewal
+through faith-centered experiences.
+</p>
+
+</div>
+
+<div class="different-card">
+
+<div class="icon-box">
+<img src="transformation.png.png" alt="Transformation">
+</div>
+
+<h3>Transformation</h3>
+
+<p>
+Our programs are designed to push boundaries, build character and foster spiritual growth.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- RESET SECTION -->
+
+<section class="reset-section">
+
+<div class="reset-image">
+
+<img src=".png.png" alt="RESET">
+
+</div>
+
+<div class="reset-content">
+
+<h2>
+Experience Transformation
+</h2>
+
+<p>
+
+At Plunge Adventure Camp,
+We believe in the power of adventure to transform lives.
+Our programs are designed to push boundaries,
+build character and foster spiritual growth.
+
+</p>
+
+<p>
+
+Through carefully crafted experiences rooted in biblical principles,
+campers discover their purpose,
+develop leadership skills and form lifelong connections.
+
+</p>
+
+<a href="about.html"
+class="primary-btn">
+Learn More About Us
+</a>
+
+</div>
+
+</section>
+
+
+<section class="gallery-section">
+
+    <h2>Memories in Motion</h2>
+    <p>
+        Explore moments of adventure, teamwork, and unforgettable experiences at Plunge Adventure Camp.
+    </p>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+            <img src="tent.jpg.jpeg" alt="Mud Pit Challenge">
+        </div>
+
+        <div class="gallery-item">
+            <img src="rope.jpg.png" alt="River Crossing">
+        </div>
+
+        <div class="gallery-item">
+            <img src="rafting.jpg.png" alt="River Rafting">
+        </div>
+
+        <div class="gallery-item">
+            <img src="leg.jpg.png" alt="Shooting">
+        </div>
+
+        <div class="gallery-item">
+            <img src="faithjump.jpg.png" alt="Faith Jump">
+        </div>
+
+        <div class="gallery-item">
+            <img src="abseiling.jpg.png" alt="Abseiling">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+<div class="footer-content">
+
+<div class="footer-column">
+
+<img src="logo.png.png" class="footer-logo">
+
+<p>
+Rewired for Purpose.
+Experience transformative adventures that challenge,
+inspire and renew.
+</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Quick Links</h3>
+
+<a href="index.html">Home</a>
+<a href="activities.html">Activities</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Contact Us</h3>
+
+<p>
+<i class="fa-solid fa-location-dot"></i>
+Plunge Adventure Camp, Ooty, Tamil Nadu 643001
+</p>
+
+<a href="https://wa.me/9843622122?text=Hi%20Plunge%20Adventure%20Camp,%20I%20would%20like%20to%20know%20more." target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+Chat on WhatsApp
+</a>
+
+<a href="mailto:plungeadvcamp@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+plungeadvcamp@gmail.com
+</a>
+</div>
+</div>
+
+
+<div class="copyright">
+© 2026 Plunge Adventure Camp. All Rights Reserved.
+</div>
+
+
+</footer>
+
+
+<script>
+window.addEventListener("scroll", () => {
+const header = document.querySelector("header");
+
+if(window.scrollY > 50){
+header.style.boxShadow = "0 10px 30px rgba(0,0,0,0.08)";
+}else{
+header.style.boxShadow = "none";
+}
+});
+
+function toggleMenu() {
+document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+</body>
+</html>

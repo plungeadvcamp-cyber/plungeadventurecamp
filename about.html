@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>About</title>
+
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+h1,
+h2,
+h3{
+    font-family: 'Fredericka the Great', cursive;
+}
+
+
+    *{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+:root{
+--bg:#f8f5ed;
+--yellow:#f5c400;
+--dark:#111111;
+--text:#555555;
+--white:#ffffff;
+}
+
+body{
+background:var(--bg);
+color:var(--dark);
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+}
+
+ul{
+list-style:none;
+}
+
+/* NAVBAR */
+/* NAVBAR */
+
+header{
+backdrop-filter:blur(12px);
+background:rgba(248,245,237,.9);
+}  
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:9999;
+background:var(--bg);
+border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+body{
+background:var(--bg);
+color:var(--dark);
+overflow-x:hidden;
+padding-top:120px;
+}
+.navbar{
+max-width:1400px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 40px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo img{
+width: 200px;
+height: auto;
+}
+
+.logo h2{
+font-size:1.8rem;
+font-weight:700;
+}
+
+.logo img{
+transition:.4s;
+}
+
+.logo img:hover{
+transform:rotate(-5deg) scale(1.08);
+}
+.nav-links{
+display:flex;
+align-items:center;
+gap:35px;
+}
+
+.nav-links a{
+color:#555;
+font-weight:500;
+transition:.3s;
+}
+
+
+
+.nav-links a{
+position:relative;
+}
+
+.nav-links a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-8px;
+width:0;
+height:3px;
+background:#f5c400;
+transition:.4s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+.register-btn{
+    background:var(--yellow);
+    color:black;
+    padding:10px 22px;
+    font-size:1rem;
+    border-radius:12px;
+    font-weight:700;
+    box-shadow:0 10px 20px rgba(245,196,0,.2);
+}
+
+.register-btn:hover{
+transform:translateY(-3px);
+}
+
+    .unique-section{
+padding: 40px 40px;
+text-align:center;
+}
+
+.unique-section h2{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.unique-subtitle{
+max-width:900px;
+margin:auto;
+color:#666;
+font-size:1.2rem;
+line-height:1.8;
+margin-bottom:70px;
+}
+
+.unique-grid{
+max-width:1400px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:40px;
+}
+
+.unique-card{
+background:white;
+padding:40px;
+border-radius:25px;
+text-align:left;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.unique-card:hover{
+transform:translateY(-10px);
+border:2px solid #f5c400;
+box-shadow:0 0 25px rgba(245,196,0,.4);
+}
+
+.unique-card h3{
+font-size:2rem;
+margin:20px 0;
+}
+
+.unique-card p{
+color:#666;
+line-height:1.8;
+}
+
+.difference-section{
+max-width:1400px;
+margin:30px auto;
+padding:60px 40px;
+background:white;
+border-radius:35px;
+text-align:center;
+box-shadow:0 20px 50px rgba(0,0,0,.08);
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+.difference-section:hover{
+transform:translateY(-8px);
+box-shadow:
+0 25px 60px rgba(0,0,0,.12),
+0 0 40px rgba(245,196,0,.15);
+}
+
+.difference-section::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.5),
+transparent
+);
+transition:.8s;
+}
+
+.difference-section:hover::before{
+left:100%;
+}
+
+.difference-section h2{
+font-size:4.5rem;
+font-weight:800;
+margin-bottom:35px;
+}
+
+.difference-section p{
+max-width:900px;
+margin:25px auto;
+font-size:1.25rem;
+line-height:2;
+color:#666;
+}
+
+.difference-section h3{
+margin-top:40px;
+font-size:2rem;
+color:#f5c400;
+text-shadow:0 0 20px rgba(245,196,0,.4);
+}
+.cta-section{
+max-width:1400px;
+margin:80px auto;
+padding:120px 40px;
+background:linear-gradient(
+135deg,
+#ffffff,
+#f8f8f8
+);
+border-radius:35px;
+text-align:center;
+box-shadow:0 20px 50px rgba(0,0,0,.08);
+position:relative;
+overflow:hidden;
+}
+
+.cta-section::before{
+content:'';
+position:absolute;
+width:300px;
+height:300px;
+background:rgba(245,196,0,.08);
+border-radius:50%;
+top:-120px;
+left:-120px;
+}
+
+.cta-section::after{
+content:'';
+position:absolute;
+width:250px;
+height:250px;
+background:rgba(245,196,0,.08);
+border-radius:50%;
+bottom:-100px;
+right:-100px;
+}
+
+.cta-section h2{
+font-size:5rem;
+font-weight:800;
+margin-bottom:50px;
+position:relative;
+z-index:2;
+}
+
+
+
+.register-btn{
+background:#f5c400;
+color:black;
+padding:20px 45px;
+border-radius:16px;
+font-size:1.3rem;
+font-weight:700;
+display:inline-block;
+transition:.4s;
+box-shadow:0 15px 30px rgba(245,196,0,.25);
+position:relative;
+z-index:2;
+}
+
+.register-btn:hover{
+transform:translateY(-8px) scale(1.05);
+box-shadow:
+0 20px 40px rgba(245,196,0,.4),
+0 0 40px rgba(245,196,0,.5);
+}
+
+
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#ece7dd;
+padding:80px 60px 30px;
+margin-top:100px;
+}
+
+.footer-content{
+max-width:1400px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+gap:60px;
+}
+
+.footer-column{
+flex:1;
+}
+
+.footer-logo{
+width:120px;
+margin-bottom:20px;
+}
+
+.footer-column h3{
+font-size:28px;
+margin-bottom:25px;
+color:#111;
+}
+
+.footer-column p{
+font-size:18px;
+line-height:1.8;
+color:#666;
+margin-bottom:12px;
+}
+
+.footer-column a{
+display:block;
+font-size:18px;
+margin-bottom:15px;
+color:#666;
+text-decoration:none;
+transition:.3s;
+}
+
+.footer-column a:hover{
+color:#f5c400;
+padding-left:8px;
+}
+
+.copyright{
+text-align:center;
+margin-top:50px;
+padding-top:25px;
+border-top:1px solid rgba(0,0,0,.1);
+color:#777;
+}
+
+@media(max-width:900px){
+
+.footer-content{
+    flex-direction:column;
+    text-align:center;
+}
+
+.footer-logo{
+    margin:auto auto 20px;
+}
+
+}
+
+.menu-toggle{
+display:none;
+font-size:2rem;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.navbar{
+    flex-direction:row;
+    justify-content:space-between;
+    padding:15px 20px;
+}
+
+.logo h2{
+    font-size:1.4rem;
+}
+
+.logo img{
+    width:150px;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.nav-links{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#f8f5ed;
+    flex-direction:column;
+    text-align:center;
+    padding:20px 0;
+}
+
+.nav-links.show{
+    display:flex;
+}
+
+.unique-grid{
+    grid-template-columns:1fr !important;
+}
+
+.register-btn{
+    display:none;
+}
+
+}
+html, body{
+    overflow-x: hidden;
+    width: 100%;
+}
+
+*{
+    max-width: 100%;
+}
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+
+@media(max-width:768px){
+
+.unique-grid{
+    grid-template-columns:1fr !important;
+}
+
+.unique-card{
+    width:100%;
+}
+
+}
+}
+@media(max-width:768px){
+
+.cta-section{
+padding:60px 20px 80px;
+}
+
+.cta-section h2{
+font-size:2.5rem;
+margin-bottom:20px;
+}
+
+.cta-section .register-btn{
+display:inline-block !important;
+margin-top:30px;
+position:relative;
+z-index:10;
+}
+
+
+
+}
+
+.icon-box{
+width:80px;
+height:80px;
+margin:0 auto 20px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.icon-box img{
+width:60px;
+height:60px;
+object-fit:contain;
+filter:grayscale(100%);
+}
+
+
+.register-btn{
+    padding: 8px 18px !important;
+    font-size: 18px !important;
+}
+
+
+.nav-links a{
+    color:#555;
+    font-weight:500;
+    text-decoration:none;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:3px;
+    background:#f5c400;
+    transition:.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+      <!-- NAVBAR -->
+
+<!-- NAVBAR -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="logo.png.png" alt="logo">
+</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
+</div>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="activities.html">Activities</a></li>
+<li><a href="about.html" class="active">About</a></li>
+<li><a href="testimonials.html">Testimonials</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+<li>
+<a href="https://forms.gle/DrwZxWbhLuFZMXtP8"
+target="_blank"
+class="register-btn">
+Register Now
+</a>
+</li>
+
+</ul>
+
+</nav>
+</header>
+
+<section class="unique-section">
+
+<h2>What Makes Us Unique</h2>
+
+<p class="unique-subtitle">
+Our approach combines adventure, community, and faith in ways that create lasting impact.
+</p>
+
+<div class="unique-grid">
+
+<div class="unique-card">
+<div class="icon-box">
+<img src="purpose.png.png" alt="Purpose">
+</div>
+<h3>Purpose-Driven</h3>
+<p>
+Every activity is intentionally designed to help campers discover their God-given purpose and potential.
+</p>
+</div>
+
+<div class="unique-card">
+<div class="icon-box">
+<img src="faith.png.png" alt="Faith">
+</div>
+<h3>Faith-Centered</h3>
+<p>
+Biblical principles guide our programs, creating space for spiritual growth and transformation.
+</p>
+</div>
+
+<div class="unique-card">
+<div class="icon-box">
+<img src="community.png.png" alt="Community">
+</div>
+<h3>Community-Focused</h3>
+<p>
+We foster authentic relationships and create a supportive environment where everyone belongs.
+</p>
+</div>
+
+<div class="unique-card">
+<div class="icon-box">
+<img src="adventure.png.png" alt="Adventure">
+</div>
+<h3>Adventure-Based</h3>
+<p>
+Challenging outdoor experiences push boundaries and build confidence in a safe setting.
+</p>
+</div>
+
+</div>
+</section>
+
+
+
+<section class="cta-section">
+
+<h2>Begin your journey of renewal</h2>
+
+<a href="https://forms.gle/DrwZxWbhLuFZMXtP8"
+target="_blank"
+class="register-btn">
+Register Now →
+</a>
+
+</section>
+
+
+
+<!-- FOOTER -->
+<footer>
+
+<div class="footer-content">
+
+<div class="footer-column">
+
+<img src="logo.png.png" class="footer-logo">
+
+<p>
+Rewired for Purpose.
+Experience transformative adventures that challenge,
+inspire and renew.
+</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Quick Links</h3>
+
+<a href="index.html">Home</a>
+<a href="activities.html">Activities</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+
+
+<div class="footer-column">
+
+<h3>Contact Us</h3>
+
+<p>
+<i class="fa-solid fa-location-dot"></i>
+Plunge Adventure Camp, Ooty, Tamil Nadu 643001
+</p>
+
+<a href="https://wa.me/9843622122?text=Hi%20Plunge%20Adventure%20Camp,%20I%20would%20like%20to%20know%20more." target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+Chat on WhatsApp
+</a>
+
+<a href="mailto:plungeadvcamp@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+plungeadvcamp@gmail.com
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Plunge Adventure Camp. All Rights Reserved.
+</div>
+
+</footer>
+
+
+
+
+</section>
+<script>
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

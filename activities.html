@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>Activities</title>
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+h1,
+h2,
+h3{
+    font-family: 'Fredericka the Great', cursive;
+}
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+:root{
+--bg:#f8f5ed;
+--yellow:#f5c400;
+--dark:#111111;
+--text:#555555;
+--white:#ffffff;
+}
+
+body{
+background:var(--bg);
+color:var(--dark);
+overflow-x:hidden;
+padding-top:110px;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+a{
+text-decoration:none;
+}
+
+ul{
+list-style:none;
+}
+
+/* NAVBAR */
+
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: var(--bg);
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+
+
+
+.navbar{
+max-width:1400px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 40px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo img{
+width: 200px;
+height: auto;
+
+
+}
+
+.logo h2{
+font-size:1.8rem;
+font-weight:700;
+}
+
+.logo img{
+transition:.4s;
+}
+
+.logo img:hover{
+transform:rotate(-5deg) scale(1.08);
+}
+.nav-links{
+display:flex;
+gap:35px;
+}
+
+.nav-links a{
+color:#555;
+font-weight:500;
+transition:.3s;
+}
+
+
+
+.nav-links a{
+position:relative;
+}
+
+.nav-links a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-8px;
+width:0;
+height:3px;
+background:#f5c400;
+transition:.4s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+.register-btn{
+background:var(--yellow);
+color:black;
+padding:15px 30px;
+border-radius:12px;
+font-weight:700;
+transition:.3s;
+box-shadow:0 10px 20px rgba(245,196,0,.2);
+}
+
+.register-btn:hover{
+transform:translateY(-3px);
+}
+.menu-toggle{
+    display:none;
+    font-size:2rem;
+    cursor:pointer;
+}
+/* ACTIVITIES */
+.activities-page{
+    padding: 140px 40px 120px;
+    text-align: center;
+}
+
+.activities-page h1{
+font-size:4.5rem;
+font-weight:800;
+margin-bottom:25px;
+}
+
+.activities-subtitle{
+max-width:900px;
+margin:auto;
+font-size:1.2rem;
+line-height:1.8;
+color:#666;
+margin-bottom:70px;
+}
+
+.activities-grid{
+max-width:1500px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+}
+
+.activity-card{
+background:white;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:all .4s ease;
+text-align:left;
+cursor:pointer;
+position:relative;
+border:2px solid transparent;
+}
+.activity-card{
+transition:0.3s ease;
+}
+
+.activity-card:hover{
+transform:translateY(-8px);
+}
+
+.activity-card img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.activity-card h3{
+padding:25px 25px 10px;
+font-size:2rem;
+}
+
+.activity-card p{
+padding:0 25px 30px;
+line-height:1.8;
+color:#666;
+}
+
+.cta-section{
+background:#f3f3f3;
+padding:120px 20px;
+text-align:center;
+margin-top:80px;
+}
+
+.cta-section h2{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.cta-section p{
+font-size:1.2rem;
+color:#666;
+margin-bottom:40px;
+}
+
+.activity-card{
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:0.3s ease;
+text-align:left;
+cursor:pointer;
+position:relative;
+border:2px solid transparent;
+}
+
+.activity-card:hover{
+transform:translateY(-8px);
+border-color:#f5c400;
+box-shadow:0 15px 30px rgba(0,0,0,.12);
+}
+
+.activity-card img{
+width:100%;
+height:320px;
+object-fit:cover;
+display:block;
+}
+
+.activity-card h3{
+padding:25px 25px 10px;
+font-size:2rem;
+}
+
+.activity-card p{
+padding:0 25px 30px;
+line-height:1.8;
+color:#666;
+}
+.activity-card{
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.08),
+        0 0 20px rgba(245,196,0,.25);
+    transition: all .4s ease;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.activity-card:hover{
+    transform: translateY(-10px);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.15),
+        0 0 30px rgba(245,196,0,.5),
+        0 0 60px rgba(245,196,0,.3);
+}
+.register-btn:hover{
+transform:translateY(-5px);
+box-shadow:
+0 15px 30px rgba(245,196,0,.4),
+0 0 30px rgba(245,196,0,.6);
+}
+
+
+
+.register-btn{
+background:var(--yellow);
+color:black;
+padding:15px 30px;
+border-radius:12px;
+font-weight:700;
+transition:.3s;
+box-shadow:0 10px 20px rgba(245,196,0,.2);
+}
+
+.register-btn:hover{
+transform:translateY(-3px);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#ece7dd;
+padding:80px 60px 30px;
+margin-top:100px;
+}
+
+.footer-content{
+max-width:1400px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+gap:60px;
+}
+
+.footer-column{
+flex:1;
+}
+
+.footer-logo{
+width: 200px;
+margin-bottom:20px;
+}
+
+.footer-column h3{
+font-size:28px;
+margin-bottom:25px;
+color:#111;
+}
+
+.footer-column p{
+font-size:18px;
+line-height:1.8;
+color:#666;
+margin-bottom:12px;
+}
+
+.footer-column a{
+display:block;
+font-size:18px;
+margin-bottom:15px;
+color:#666;
+text-decoration:none;
+transition:.3s;
+}
+
+.footer-column a:hover{
+color:#f5c400;
+padding-left:8px;
+}
+
+.copyright{
+text-align:center;
+margin-top:50px;
+padding-top:25px;
+border-top:1px solid rgba(0,0,0,.1);
+color:#777;
+}
+
+@media(max-width:900px){
+
+.footer-content{
+flex-direction:column;
+text-align:center;
+}
+
+.footer-logo{
+margin:auto auto 20px;
+}
+
+}
+/* MOBILE RESPONSIVE */
+
+@media (max-width:768px){
+
+.navbar{
+    flex-direction:column;
+    gap:15px;
+    padding:15px;
+}
+
+.logo{
+    flex-direction:column;
+    text-align:center;
+}
+
+.logo img{
+    width:80px;
+}
+
+.logo h2{
+    font-size:2rem;
+}
+
+.nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.register-btn{
+    margin-top:10px;
+}
+
+.activities-page{
+    padding:60px 20px;
+}
+
+.activities-page h1{
+    font-size:2.5rem;
+}
+
+.activities-subtitle{
+    font-size:1rem;
+}
+
+.activities-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+}
+
+.activity-card img{
+    height:250px;
+}
+
+.cta-section{
+    padding:70px 20px;
+}
+
+.cta-section h2{
+    font-size:2rem;
+}
+
+.cta-section p{
+    font-size:1rem;
+}
+
+.footer-content{
+    flex-direction:column;
+    text-align:center;
+}
+
+.footer-logo{
+    margin:auto auto 20px;
+}
+.menu-toggle{
+display:none;
+font-size:2rem;
+cursor:pointer;
+}
+
+
+@media(max-width:768px){
+
+
+    
+.navbar{
+flex-direction:row;
+justify-content:space-between;
+padding:15px 20px;
+}
+
+.logo h2{
+font-size:1.4rem;
+}
+
+.logo img{
+width:70px;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+width:100%;
+background:#f8f5ed;
+flex-direction:column;
+text-align:center;
+padding:20px 0;
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+.nav-links.show{
+display:flex;
+}
+
+.navbar .register-btn{
+display:none;
+}
+}
+}
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+display:none;
+}
+
+.nav-links.show{
+display:flex;
+}
+
+}
+
+@media(max-width:900px){
+
+.footer-content{
+flex-direction:column;
+text-align:center;
+}
+
+
+}
+
+@media(max-width:768px){
+
+.logo{
+display:flex;
+flex-direction:row;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:60px;
+}
+
+.logo h2{
+font-size:1.2rem;
+margin:0;
+white-space:nowrap;
+}
+.cta-btn{
+background:#f5c400;
+color:#111;
+padding:20px 45px;
+border-radius:16px;
+font-weight:700;
+display:inline-block;
+}
+}
+
+html,body{
+margin:0;
+padding:0;
+height:100%;
+}
+
+body{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+footer{
+margin-top:auto;
+margin-bottom:0;
+padding-bottom:20px;
+}
+
+
+footer{
+margin:0 !important;
+}
+
+body > *:last-child{
+margin-bottom:0 !important;
+padding-bottom:0 !important;
+}
+
+ @media(max-width:768px){
+
+.navbar{
+flex-direction:row;
+justify-content:space-between;
+padding:15px 20px;
+}
+
+.logo{
+display:flex;
+flex-direction:row;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width: 150px;
+height: auto;
+}
+
+.logo h2{
+font-size:1.2rem;
+white-space:nowrap;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+width:100%;
+background:#f8f5ed;
+flex-direction:column;
+text-align:center;
+padding:20px 0;
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+.nav-links.show{
+display:flex;
+}
+
+.navbar .register-btn{
+display:none;
+}
+
+.activities-grid{
+grid-template-columns:1fr;
+}
+
+}
+.nav-links a{
+    color:#555;
+    font-weight:500;
+    text-decoration:none;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:3px;
+    background:#f5c400;
+    transition:.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
+}
+
+</style>
+
+   
+</head>
+<body>
+    <!-- NAVBAR -->
+
+<!-- NAVBAR -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="logo.png.png" alt="logo">
+</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
+</div>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="index.html" class="Home">Home</a></li>
+<li><a href="activities.html" class="active">Activities</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="testimonials.html">Testimonials</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+<li>
+<a href="https://forms.gle/DrwZxWbhLuFZMXtP8"
+target="_blank"
+class="register-btn">
+Register Now
+</a>
+</li>
+
+</ul>
+
+</nav>
+</header>
+
+<section class="activities-page">
+
+<h1>Our Adventure Programs</h1>
+
+<p class="activities-subtitle">
+From heart-pounding challenges to skill-building experiences, our diverse activities are
+designed to push boundaries, build character, and create unbreakable team bonds.
+</p>
+
+<div class="activities-grid">
+
+<div class="activity-card">
+<img src="mudpit.jpg.png" alt="">
+<h3> Mud Pit Challenge</h3>
+<p>
+Push through muddy obstacles and test your endurance.
+Navigate challenging terrain while building mental toughness and physical resilience.
+Subject to weather and landscape conditions.
+</p>
+</div>
+
+<div class="activity-card">
+<img src="rivercrossing.jpg.png" alt="">
+<h3> River Crossing</h3>
+<p>
+Cross flowing water using ropes and teamwork.
+Work together with your team to safely navigate across the river.
+subject to water levels and weather conditions.
+</p>
+</div>
+
+<div class="activity-card">
+<img src="rafting.jpg.png" alt="">
+<h3> River Rafting</h3>
+<p>
+Navigate exciting rapids and work as a team.
+Experience the thrill of white-water rafting while developing teamwork.
+subject to water levels and weather conditions.
+</p>
+</div>
+
+<div class="activity-card">
+<img src="faithjump.jpg.png" alt="">
+<h3>Faith Jump</h3>
+<p>
+Build confidence by taking a leap from height.
+Challenge your fears and discover your inner strength.
+subject to weather and landscape conditions.
+</p>
+</div>
+
+<div class="activity-card">
+<img src="triangle.jpg.png" alt="">
+<h3>Triangle</h3>
+<p>
+Balance, climb, and conquer aerial obstacles.
+Develop courage, balance and teamwork skills.
+subject to weather and landscape conditions.
+</p>
+</div>
+
+<div class="activity-card">
+<img src="abseiling.jpg.png" alt="">
+<h3> Abseiling</h3>
+<p>
+Descend steep cliffs safely with expert guidance.
+Build confidence and overcome heights.
+subject to weather and landscape conditions.
+</p>
+</div>
+
+</div>
+
+<!-- Activities Content -->
+ <section class="cta-section">
+
+<h2>Ready to take on the challenge?</h2>
+
+<p>
+Join us and experience these adventures firsthand.
+</p>
+
+<a href="https://forms.gle/DrwZxWbhLuFZMXtP8"
+target="_blank"
+class="register-btn">
+Register Now →
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<div class="footer-content">
+
+<div class="footer-column">
+
+<img src="logo.png.png" class="footer-logo">
+
+<p>
+Rewired for Purpose.
+Experience transformative adventures that challenge,
+inspire and renew.
+</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Quick Links</h3>
+
+<a href="index.html">Home</a>
+<a href="activities.html">Activities</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div class="footer-column">
+
+
+
+<h3>Contact Us</h3>
+
+<p>
+<i class="fa-solid fa-location-dot"></i>
+Plunge Adventure Camp, Ooty, Tamil Nadu 643001
+</p>
+
+<a href="https://wa.me/9843622122?text=Hi%20Plunge%20Adventure%20Camp,%20I%20would%20like%20to%20know%20more." target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+Chat on WhatsApp
+</a>
+
+<a href="mailto:plungeadvcamp@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+plungeadvcamp@gmail.com
+</a>
+
+
+</div>
+
+
+</div>
+
+<div class="copyright">
+© 2026 Plunge Adventure Camp. All Rights Reserved.
+</div>
+
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
