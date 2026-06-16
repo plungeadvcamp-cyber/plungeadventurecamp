@@ -908,7 +908,34 @@ filter: grayscale(100%);
         width:100%;
     }
 }
+@media (max-width:700px){
 
+    .different-grid{
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    .different-card{
+        width: 100%;
+    }
+
+    .reset-section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    html,
+    body{
+        overflow-x: hidden;
+    }
+}
+
+img,
+video{
+    max-width:100%;
+    height:auto;
+}
 </style>
 
 
