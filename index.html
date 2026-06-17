@@ -5,12 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plunge Adventure Camp</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@font-face{
+    font-family: 'Asphaltic';
+    src: url('ASPHALTIC.ttf') format('truetype');
+}
 
 h1,
 h2,
 h3{
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Asphaltic', sans-serif;
+    color: #191816;
+}
+
+.price,
+.event-date,
+.registration-fee{
+    font-family: 'Poppins', sans-serif !important;
 }
 *{
 margin:0;
@@ -129,8 +139,8 @@ width:100%;
 .register-btn{
 background:var(--yellow);
 color:black;
-padding:15px 30px;
-border-radius:12px;
+padding:10px 20px;
+border-radius:10px;
 font-weight:700;
 transition:.3s;
 box-shadow:0 10px 20px rgba(245,196,0,.2);
@@ -421,7 +431,10 @@ gap:40px;
 }
 
 .different-card{
-padding:30px;
+    background: #fff;
+    border-radius: 30px;   /* Rounded corners */
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
 .icon-box{
@@ -446,6 +459,7 @@ margin-bottom:15px;
 line-height:1.8;
 }
 
+
 /* RESET */
 
 .reset-section{
@@ -459,11 +473,10 @@ align-items:center;
 }
 
 .reset-image img{
-width:100%;
-border-radius:25px;
-background:white;
-padding:20px;
-box-shadow:0 15px 40px rgba(0,0,0,.06);
+    width:100%;
+    display:block;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,.06);
 }
 
 .reset-content h2{
@@ -626,6 +639,69 @@ color:#777;
 
 
 
+.footer-bottom{
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-bottom p{
+    margin: 0;
+    width: 100%;
+    font-size: 0.95rem;
+    color: #666;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.footer-bottom a{
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-bottom a:hover{
+    color: #f5c400;
+}
+
+footer p a{
+    color: #f5c400; /* Your logo yellow */
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+footer p a:hover{
+    color: #d4a800;
+    text-decoration: underline;
+}
+
+footer p{
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+
+.footer-bottom{
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding: 30px 0;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    text-align: center;
+}
+
+.footer-bottom p{
+    margin: 0;
+    font-size: 0.95rem;
+    color: #666;
+}
 
 @media(max-width:700px){
 
@@ -958,6 +1034,7 @@ video{
         padding-top:80px;
     }
 }
+
 </style>
 
 
@@ -1044,7 +1121,7 @@ Registration Open
 </div>
 
 <h2>
-Plunge Adventure Camp 2026
+Plunge Adventure Camp
 </h2>
 
 <p>
@@ -1199,7 +1276,7 @@ Our programs are designed to push boundaries, build character and foster spiritu
 
 <div class="reset-image">
 
-<img src=".png.png" alt="RESET">
+<img src="transformation.jpg.JPG" alt="RESET">
 
 </div>
 
@@ -1238,7 +1315,7 @@ Learn More About Us
 
 <section class="gallery-section">
 
-    <h2>Memories in Motion</h2>
+    <h2>Adventure Gallery</h2>
     <p>
         Explore moments of adventure, teamwork, and unforgettable experiences at Plunge Adventure Camp.
     </p>
@@ -1262,7 +1339,7 @@ Learn More About Us
         </div>
 
         <div class="gallery-item">
-            <img src="faithjump.jpg.png" alt="Faith Jump">
+            <img src="meeting.jpg.JPG" alt="Faith Jump">
         </div>
 
         <div class="gallery-item">
@@ -1323,9 +1400,17 @@ plungeadvcamp@gmail.com
 </div>
 
 
-<div class="copyright">
-© 2026 Plunge Adventure Camp. All Rights Reserved.
-</div>
+
+    <!-- Footer columns here -->
+
+    <div class="footer-bottom">
+        <p>
+            © 2026 Plunge Adventure Camp. Designed by
+            <a href="https://creohub.in" target="_blank">Creo Hub</a>
+        </p>
+    </div>
+
+
 
 
 </footer>
