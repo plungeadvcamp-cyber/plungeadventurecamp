@@ -668,15 +668,16 @@ display:block;
 .nav-links{
 display:none;
 position:absolute;
-top:90px;
+top:70px;
 left:0;
 width:100%;
 background:#f8f5ed;
 flex-direction:column;
 text-align:center;
-padding:30px 0;
-box-shadow:0 10px 20px rgba(0,0,0,.1);
+padding:15px 0;
+box-shadow:none;
 z-index:999;
+gap:35px;
 }
 
 .nav-links.active{
@@ -684,7 +685,7 @@ display:flex;
 }
 
 .nav-links li{
-margin:15px 0;
+margin:8px 0;
 }
 
 .logo h2{
@@ -704,8 +705,11 @@ grid-template-columns:1fr;
 grid-template-columns:1fr;
 }
 
-}
 
+}
+.register-btn{
+    display: none;
+}
 .copyright{
 text-align:center;
 margin-top:50px;
